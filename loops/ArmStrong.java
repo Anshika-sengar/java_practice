@@ -1,68 +1,43 @@
-// // package loops;
-// // import java.util.Scanner;
-// // public class ArmStrong {
-// //     public static void main(String[] args) {
-// //         Scanner sc=new Scanner(System.in);
-// //         int a=sc.nextInt();
-// //         boolean armstrong=isarmstrong(a);
-// //         if(armstrong){
-// //             System.out.println("armstrong");
-// //         }
-// //         else{
-// //             System.out.println("not armstrong");
-// //         }
-// //     }
-// //     public static boolean isarmstrong(int num){
-// //         int noOfDigit=count(num);
-// //         int numCopy=num;
-// //         int finalnumber=0;
-// //         while(num>0){
-// //             int lastdigit=num%10;
-// //             num/=10; 
-// //             finalnumber+=power(lastdigit,noOfDigit);
-// //         }
-// //         return finalnumber==numCopy;
-// //     }
-// //     public static int power(int num1,int num2){
-// //         int result=1;
-// //         int i=0;
-// //         while(i<num2){
-// //             result*=num1;
-// //             i++;
-// //         }
-// //         return result;
-// //     }
-// //     public static int count(int num){
-// //         int count=0;
-// //         while (num>0) {
-// //             count++;
-// //             num=num/10;
-// //         }
+package loops;  //  package name (file should be inside loops folder)
 
-// //         return count;
-// //     }
-// // }
-// package loops;
-// import java.util.Scanner;
+import java.util.Scanner;  //  Scanner is used to take input from user
 
-// public class ArmStrong {
-//     public static void main(String[] args) {
-//         Scanner sc = new Scanner(System.in);
+public class ArmStrong {
+    public static void main(String[] args) {
 
-//         int num = sc.nextInt();
-//         int temp = num;
-//         int sum = 0;
+        //  create Scanner object for input
+        Scanner sc = new Scanner(System.in);
 
-//         while (temp > 0) {
-//             int digit = temp % 10;
-//             sum = sum + (digit * digit * digit); // cube
-//             temp = temp / 10;
-//         }
+        //  take number input from user
+        int num = sc.nextInt();
 
-//         if (sum == num) {
-//             System.out.println("armstrong");
-//         } else {
-//             System.out.println("not armstrong");
-//         }
-//     }
-// }
+        //  temp is used because we will modify it in loop
+        int temp = num;
+
+        //  sum will store the sum of cubes of digits
+        int sum = 0;
+
+        // loop runs until temp becomes 0
+        while (temp > 0) {
+
+            // get last digit of the number
+            int digit = temp % 10;
+
+            //  add cube of digit into sum (digit^3)
+            sum = sum + (digit * digit * digit);
+
+            //  remove last digit from temp
+            temp = temp / 10;
+        }
+
+        //  if sum is equal to original number then it is Armstrong
+        if (sum == num) {
+            System.out.println("armstrong");
+        } else {
+            System.out.println("not armstrong");
+        }
+
+        // close scanner (good practice)
+        sc.close();
+    }
+}
