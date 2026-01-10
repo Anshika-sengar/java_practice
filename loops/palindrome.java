@@ -1,24 +1,24 @@
-package loops;
-import java.util.Scanner;
+// package loops;
+// import java.util.Scanner;
 
-public class palindrome {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+// public class palindrome {
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
 
-        int num = sc.nextInt();
-        int reverse = 0;
-        int original = num;
+//         int num = sc.nextInt();
+//         int reverse = 0;
+//         int original = num;
 
-        while (num > 0) {
-            int digit = num % 10;
-            reverse = reverse * 10 + digit;
-            num = num / 10;
-        }
+//         while (num > 0) {
+//             int digit = num % 10;
+//             reverse = reverse * 10 + digit;
+//             num = num / 10;
+//         }
 
-        if (original == reverse) {
-            System.out.println("palindrome");
-        } else {
-            System.out.println("not palindrome");
-        }
-    }
-}
+//         if (original == reverse) {
+//             System.out.println("palindrome");
+//         } else {
+//             System.out.println("not palindrome");
+//         }
+//     }
+// }
